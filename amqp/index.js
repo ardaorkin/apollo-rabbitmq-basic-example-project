@@ -18,7 +18,7 @@ const amqpSub = () =>
             },
           },
           queue: {
-            name: "hero-queue",
+            name: "",
             options: {
               exclusive: true,
               durable: true,
