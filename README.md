@@ -1,6 +1,6 @@
 # Apollo Server & RabbitMQ
 
-It is a basic project to demonstrate how a message can publish from Apollo Server, using GraphQL PubSub, to a RabbitMQ message broker
+It is a basic project to demonstrate how a message can be published from Apollo Server, using GraphQL PubSub, to a RabbitMQ message broker
 
 ## Getting Started
 
