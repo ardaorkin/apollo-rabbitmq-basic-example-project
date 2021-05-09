@@ -37,6 +37,52 @@ or
 yarn install
 ```
 
+## Usage
+
+Run `npm start` or `yarn start` to execute the server. Then open up the [Apollo Server](http://localhost:4000/graphql) in a web browser and run this subscription:
+
+```graphql
+subscription HeroCreated {
+  heroEvent {
+    _id
+    name
+    enemies
+    powers
+  }
+}
+```
+
+And then create a hero in an another tab on the Apollo Server:
+
+```graphql
+mutation AddHero {
+  addHero(
+    body: { name: "Batman", powers: "Night See", enemies: ["Penguin", "Bane"] }
+  ) {
+    _id
+    name
+    powers
+    enemies
+  }
+}
+```
+
+After run the mutation above, open up subscription tab and you should see the newly added hero.
+
+Also you can delete the hero by running this mutation:
+
+```graphql
+mutation DeleteHero {
+  deleteHero(id: "id_of_the_hero") {
+    _id
+    name
+    powers
+  }
+}
+```
+
+And you can check exchanges and queues in the AMQP Server. You should see an exchange named **apollo-pubsub** of the topic type.
+
 ## Built With
 
 - [Express.js](https://expressjs.com/)

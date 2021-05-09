@@ -12,9 +12,11 @@ const dbConnection = () =>
 
     const db = mongoose.connection;
 
-    db.on("error", () => {
+    db.on("error", (err) => {
       console.error.bind(console, "connection error:");
-      reject(new Error("An error has occured on database connection"));
+      reject(
+        new Error("An error has occured on database connection %s", err.message)
+      );
     });
     db.once("open", () => {
       resolve("Successfull database connection");

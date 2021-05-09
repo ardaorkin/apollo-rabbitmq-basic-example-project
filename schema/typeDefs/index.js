@@ -9,7 +9,6 @@ const typeDefs = gql`
   }
 
   input HeroInput {
-    _id: ID
     name: String
     powers: [String]
     enemies: [String]

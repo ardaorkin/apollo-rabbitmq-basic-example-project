@@ -11,6 +11,7 @@
   "author": "Arda Örkin",
   "license": "ISC",
   "dependencies": {
+    "amqplib": "^0.7.1",
     "apollo-datasource-rest": "^0.13.0",
     "apollo-server-express": "^2.24.0",
     "cors": "^2.8.5",
